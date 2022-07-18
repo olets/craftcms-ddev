@@ -1,5 +1,10 @@
 .PHONY: build dev composer craft pull up install
 
+init:
+	cp .env.example .env
+	mv -f composer.json.default composer.json
+	mv -f .gitignore.default .gitignore
+	rm CHANGELOG.md && rm LICENSE.md && rm README.md
 build: up
 	ddev exec npm run build
 dev: build
