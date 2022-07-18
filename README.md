@@ -42,28 +42,18 @@ Make sure that `PATH` is a **new** or **existing and empty** folder.
 
 ### Option 2: With Git CLI
 
-Alternatively you can clone the repo via the Git CLI:
+Alternatively you can clone the repo via the Git CLI. [degit](https://github.com/Rich-Harris/degit) is the easiest way:
 
 ```shell
-git clone git@github.com:onedarnleyroad/craftcms.git PATH
+degit git@github.com:onedarnleyroad/craftcms.git PATH
 ```
 
 Make sure that `PATH` is a **new** _or_ **existing and empty** folder.
 
-Next, you'll want to discard the existing `/.git` directory. In the terminal, run:
-
-```shell
-cd PATH
-rm -rf .git
-```
-
 Last, clean up and set some default files for use:
 
 ```shell
-cp .env.example .env
-mv -f composer.json.default composer.json
-mv -f .gitignore.default .gitignore
-rm CHANGELOG.md && rm LICENSE.md && rm README.md
+make init
 ```
 
 ### Option 3: Manual Download
